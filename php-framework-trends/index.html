@@ -1,0 +1,3947 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <title>PHP Framework Trends | Tomas Votruba</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    
+    <link rel="alternate" type="application/rss+xml" title="Tomas Votruba Blog RSS" href="/rss.xml">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous">
+
+        <link href="/assets/bootstrap/bootstrap.min.css?v=94752916" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/prism/prism.css?v=1383531760" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/style.css?v=1444569448" rel="stylesheet" type="text/css" />
+
+    <link href="/assets/gifplayer/gifplayer.css" rel="stylesheet" type="text/css" />
+
+        <link href="/assets/css/checklist.css?v=1830568223" rel="stylesheet" type="text/css" />
+</head>
+    <body>
+        <div class="hidden-sm-down">
+    <nav class="navbar">
+        <div class="container-fluid">
+            <ul>
+                <li id="logo">
+                    <img src="https://avatars1.githubusercontent.com/u/924196?s=60&v=4" class="avatar">
+                    Tomas Votruba
+                </li>
+                <li class="">
+                    <a href="/">Blog</a>
+                </li>
+                <li class="active">
+                    <a href="/php-framework-trends/">Trends</a>
+                </li>
+                <li class="">
+                    <a href="/clusters/">Clusters</a>
+                </li>
+                <li class="">
+                    <a href="/mission/">Mission</a>
+                </li>
+                <li class="">
+                    <a href="/talks/">Talks</a>
+                </li>
+                <li class="">
+                    <a href="/contact/">Contact</a>
+                </li>
+                <li id="top-menu-search">
+                    <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+    <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+    <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+    <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+</form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="hidden-md-up">
+    <nav class="navbar" id="mobile-menu">
+        <div class="container">
+            <a href="/" class="col-3 col-sm-3 ">
+                <em class="fas fa-book"></em>
+                <br>
+                Blog
+            </a>
+            <a href="/clusters/" class="col-3 col-sm-3 ">
+                <em class="fas fa-share-alt"></em>
+                <br>
+                Clusters
+            </a>
+            <a href="/php-framework-trends/" class="col-3 col-sm-3 active">
+                <em class="fas fa-chart-bar"></em>
+                <br>
+                Trends
+            </a>
+            <a href="/contact/" class="col-3 col-sm-3 ">
+                <em class="fas fa-phone"></em>
+                <br>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <div class="hidden-md-up text-center" id="top-menu-search-mobile">
+        <form method="get" action="https://www.google.com/search" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
+    <meta itemprop="target" content="https://www.google.com/search?q={q}"/>
+    <input name="sitesearch" value="tomasvotruba.cz" type="hidden"/>
+    <input itemprop="query-input" type="text" id="search-query" class="form-control" required="required" name="q" placeholder="Search..." autocomplete="off"/>
+</form>
+    </div>
+</div>
+
+        <div id="content">
+            
+<div class="container-fluid">
+    <h1>PHP Framework Trends</h1>
+
+    <p class="text-muted mb-4 small">Updated at 3. 11.</p>
+
+    <p>
+        <a href="/blog/2019/04/11/trends-of-php-frameworks-in-numbers/">Why was this table created?</a>
+    <p>
+
+    <p>
+        The goal of this table is to get from feelings and opinions of single influencers <strong>to numbers and results in active community</strong>.
+    </p>
+
+    <div class="alert alert-sm alert-warning mt-3 mb-4">
+        <code>symfony/*</code> downloads are cleared from <code>laravel/*</code> downloads. 1 download of Laravel packages = 0 downloads of Symfony packages. <strong>See <a href="https://github.com/TomasVotruba/tomasvotruba.cz/blob/88cd6f3c8ae14ec9770f38bfea6300f88089def7/src/Packagist/Purifier/InterveningPackagesPurifier.php#L17">full list of packages cleared this way</a></strong>.
+    </div>
+
+    <table class="table table-bordered table-responsive table-striped sortable_table" id="main_table">
+        <thead class="thead-inverse">
+            <tr>
+                <th class="text-center w-25 align-middle">Framework</th>
+                <th class="text-center w-25 align-middle">Year Trend</th>
+                <th class="text-center w-25 align-middle">Last 12 Months</th>
+                <th class="text-center w-25 align-middle">Previous 12 Months</th>
+            </tr>
+        </thead>
+
+                    <tr>
+                <td>
+                    <a href="#symfony">Symfony</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="47">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 47 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="593081850">
+                                <strong>593.1 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="402388980">
+                                <strong>402.4 M</strong>
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#laravel">Laravel</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="31">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 31 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="85309020">
+                                <strong>85.3 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="65225550">
+                                <strong>65.2 M</strong>
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#zend">Zend</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="27">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 27 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="194221170">
+                                <strong>194.2 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="153306480">
+                                <strong>153.3 M</strong>
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#cakephp">CakePHP</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="26">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 26 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="10368540">
+                                <strong>10.4 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="8226900">
+                                8.2 M
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#doctrine">Doctrine</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="20">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 20 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="329038410">
+                                <strong>329.0 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="274232880">
+                                <strong>274.2 M</strong>
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#nette">Nette</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="15">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 15 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="8423310">
+                                8.4 M
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="7344030">
+                                7.3 M
+    
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                    <a href="#yii">Yii</a>
+                </td>
+                <td class="text-right text-nowrap" data-order="12">
+                        <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+
+                </td>
+                <td class="text-right text-nowrap" data-order="17573100">
+                                <strong>17.6 M</strong>
+    
+                </td>
+                <td class="text-right text-nowrap" data-order="15691290">
+                                <strong>15.7 M</strong>
+    
+                </td>
+            </tr>
+            </table>
+
+    <br>
+
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="symfony">Symfony</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="symfony">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/web-link/stats">
+                            web-link
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="228.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 229 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2788800">            2.8 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="848640">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/security-core/stats">
+                            security-core
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="214.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 214 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4874220">            4.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1551870">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/lock/stats">
+                            lock
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="208.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 209 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1391760">            1.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="450570">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/property-info/stats">
+                            property-info
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="190.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 191 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="5009430">            5.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1724610">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/maker-bundle/stats">
+                            maker-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="172">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 172 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4234200">            4.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1556760">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/workflow/stats">
+                            workflow
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="145.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 145 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1034640">            1.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="421830">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/debug-bundle/stats">
+                            debug-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="144.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 145 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3576090">            3.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1461330">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/security-bundle/stats">
+                            security-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="143">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 143 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6044910">            6.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2487330">            2.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/dotenv/stats">
+                            dotenv
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="138.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 139 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="7432590">            7.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3116130">            3.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/twig-bundle/stats">
+                            twig-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="136.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 136 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6629880">            6.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2806320">            2.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/options-resolver/stats">
+                            options-resolver
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="135.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 135 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="9247260">            9.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3930030">            3.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/flex/stats">
+                            flex
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="133.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 134 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6723810">            6.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2879910">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/doctrine-bridge/stats">
+                            doctrine-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="125.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 126 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6562050">            6.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2905320">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/web-profiler-bundle/stats">
+                            web-profiler-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="124.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 124 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="5392560">            5.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2405850">            2.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/monolog-bridge/stats">
+                            monolog-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="122.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 123 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6552690">            6.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2941050">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/web-server-bundle/stats">
+                            web-server-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="117.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 117 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3052470">            3.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1404450">            1.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/stopwatch/stats">
+                            stopwatch
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="116.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 116 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4714770">            4.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2180100">            2.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/asset/stats">
+                            asset
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="112.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 113 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6127560">            6.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2882010">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/inflector/stats">
+                            inflector
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="112.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 112 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="10156410">            <strong>10.2 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="4785810">            4.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/templating/stats">
+                            templating
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="108.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 109 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4104420">            4.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1965780">            2.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/framework-bundle/stats">
+                            framework-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="108.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 109 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="8029620">            8.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3849750">            3.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/form/stats">
+                            form
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="106">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 106 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6178980">            6.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2998980">            3.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/proxy-manager-bridge/stats">
+                            proxy-manager-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="104">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 104 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1534350">            1.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="752220">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/intl/stats">
+                            intl
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="101.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 102 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="7362690">            7.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3648420">            3.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/property-access/stats">
+                            property-access
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="99.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 100 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="11280060">            <strong>11.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="5653770">            5.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/twig-bridge/stats">
+                            twig-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="93.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 93 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="7854990">            7.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="4064610">            4.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/expression-language/stats">
+                            expression-language
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="87.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 88 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="7421700">            7.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3958020">            4.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/cache/stats">
+                            cache
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="86.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 86 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="10938450">            <strong>10.9 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="5870310">            5.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/ldap/stats">
+                            ldap
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="85.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 85 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="274950">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="148470">            <span class="text-muted">0.1 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/serializer/stats">
+                            serializer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="77.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 77 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="11970870">            <strong>12.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="6753150">            6.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/validator/stats">
+                            validator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="67.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 67 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="12110850">            <strong>12.1 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="7242210">            7.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/http-foundation/stats">
+                            http-foundation
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="67.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 67 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="11824290">            <strong>11.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="7069980">            7.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/var-dumper/stats">
+                            var-dumper
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="64">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 64 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="13641870">            <strong>13.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="8319150">            8.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/psr-http-message-bridge/stats">
+                            psr-http-message-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="56.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 57 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="9173040">            9.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="5861910">            5.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/routing/stats">
+                            routing
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="53.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 53 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="13673880">            <strong>13.7 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="8930430">            8.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/http-kernel/stats">
+                            http-kernel
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="52">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 52 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="12589590">            <strong>12.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="8280900">            8.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/filesystem/stats">
+                            filesystem
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="48.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 49 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="21011370">            <strong>21.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="14140050">            <strong>14.1 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/dependency-injection/stats">
+                            dependency-injection
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="45.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 45 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="19191990">            <strong>19.2 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="13221930">            <strong>13.2 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/config/stats">
+                            config
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="42.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 42 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="19060740">            <strong>19.1 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="13415910">            <strong>13.4 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/browser-kit/stats">
+                            browser-kit
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="39.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 40 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="14753700">            <strong>14.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="10557420">            <strong>10.6 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/phpunit-bridge/stats">
+                            phpunit-bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="34.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 35 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="10814760">            <strong>10.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="8016450">            8.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/translation/stats">
+                            translation
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 33 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="44441490">            <strong>44.4 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="33432930">            <strong>33.4 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/css-selector/stats">
+                            css-selector
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 33 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="39294540">            <strong>39.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="29610180">            <strong>29.6 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/process/stats">
+                            process
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="30.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="12994110">            <strong>13.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="9968550">            10.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/dom-crawler/stats">
+                            dom-crawler
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="24.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 24 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="20621160">            <strong>20.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="16599810">            <strong>16.6 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/monolog-bundle/stats">
+                            monolog-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="19.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 20 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="13417980">            <strong>13.4 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="11214660">            <strong>11.2 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/yaml/stats">
+                            yaml
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="17.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 18 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="35517450">            <strong>35.5 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="30159660">            <strong>30.2 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/debug/stats">
+                            debug
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="14.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 14 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="20833050">            <strong>20.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="18211290">            <strong>18.2 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/event-dispatcher/stats">
+                            event-dispatcher
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="14">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 14 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="19265910">            <strong>19.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="16893720">            <strong>16.9 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/swiftmailer-bundle/stats">
+                            swiftmailer-bundle
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="13.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 13 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="10816680">            <strong>10.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="9557220">            9.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/security/stats">
+                            security
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 8 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3476940">            3.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3218160">            3.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/console/stats">
+                            console
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="7.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 8 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="13950840">            <strong>14.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="12973350">            <strong>13.0 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/finder/stats">
+                            finder
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="7.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 7 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="8945130">            8.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="8340120">            8.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/skeleton/stats">
+                            skeleton
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 3 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="303360">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="294030">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/security-acl/stats">
+                            security-acl
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-6.7">    <span class="text-nowrap">
+                    <span class="text-danger">- 7 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4125180">            4.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="4419540">            4.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/symfony/symfony/stats">
+                            symfony
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-13">    <span class="text-nowrap">
+                    <span class="text-danger">- 13 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="8734770">            8.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="10036020">            <strong>10.0 M</strong>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="laravel">Laravel</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="laravel">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/log/stats">
+                            log
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="137.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 138 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1348380">            1.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="566730">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/mail/stats">
+                            mail
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="47.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 48 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="618870">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="418470">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/redis/stats">
+                            redis
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="38.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 38 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1010670">            1.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="730110">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/config/stats">
+                            config
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="36">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 36 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2784540">            2.8 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2046810">            2.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/filesystem/stats">
+                            filesystem
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="36">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 36 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3364080">            3.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2472780">            2.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/routing/stats">
+                            routing
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="35.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 36 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="515970">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="380460">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/support/stats">
+                            support
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="35.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 35 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6353130">            6.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="4701300">            4.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/console/stats">
+                            console
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="34.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 34 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2533140">            2.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1884690">            1.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/events/stats">
+                            events
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="33.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 34 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3302880">            3.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2465760">            2.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/view/stats">
+                            view
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="33.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 34 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2650680">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1982130">            2.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/queue/stats">
+                            queue
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 33 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2150190">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1620510">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/container/stats">
+                            container
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 32 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4896930">            4.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3703170">            3.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/translation/stats">
+                            translation
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="31.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 31 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2178930">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1658190">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/bus/stats">
+                            bus
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2064540">            2.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1590990">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/pipeline/stats">
+                            pipeline
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2199810">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1696650">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/cache/stats">
+                            cache
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2233560">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1724760">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/session/stats">
+                            session
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2252610">            2.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1743420">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/auth/stats">
+                            auth
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1963170">            2.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1525620">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/broadcasting/stats">
+                            broadcasting
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1917690">            1.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1491060">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/validation/stats">
+                            validation
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2193780">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1706070">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/hashing/stats">
+                            hashing
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1981500">            2.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1542150">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/pagination/stats">
+                            pagination
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 28 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2226210">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1734480">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/encryption/stats">
+                            encryption
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 28 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2138010">            2.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1665750">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/database/stats">
+                            database
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 28 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3587250">            3.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2803410">            2.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/illuminate/http/stats">
+                            http
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="27.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 28 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2203920">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1724430">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/laravel/framework/stats">
+                            framework
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="25.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 25 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="24638580">            <strong>24.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="19645650">            <strong>19.6 M</strong>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="zend">Zend</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="zend">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-diactoros/stats">
+                            zend-diactoros
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="81.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 82 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="18346290">            <strong>18.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="10100670">            <strong>10.1 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mail/stats">
+                            zend-mail
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="69.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 69 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2671890">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1577820">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-barcode/stats">
+                            zend-barcode
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="68.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 69 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1112880">            1.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="659910">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mime/stats">
+                            zend-mime
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="65.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 66 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2824650">            2.8 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1706700">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-config-aggregator/stats">
+                            zend-config-aggregator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="54.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 55 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="346620">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="224370">            <span class="text-muted">0.2 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-expressive-helpers/stats">
+                            zend-expressive-helpers
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="49.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 50 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="372390">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="249150">            <span class="text-muted">0.2 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-feed/stats">
+                            zend-feed
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="47.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 47 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4716060">            4.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3204480">            3.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-expressive-router/stats">
+                            zend-expressive-router
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="47.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 47 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="406950">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="276720">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zenddiagnostics/stats">
+                            zenddiagnostics
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="46.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 46 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1910160">            1.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1304340">            1.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-psr7bridge/stats">
+                            zend-psr7bridge
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="43">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 43 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2029020">            2.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1418670">            1.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-expressive-template/stats">
+                            zend-expressive-template
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="42.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 43 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="373650">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="261690">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-ldap/stats">
+                            zend-ldap
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="42.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 42 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="801060">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="562710">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-code/stats">
+                            zend-code
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="38.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 38 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="15550680">            <strong>15.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="11255880">            <strong>11.3 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-expressive/stats">
+                            zend-expressive
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="34.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 35 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="358170">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="266250">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-router/stats">
+                            zend-router
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="33.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 34 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="743820">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="555570">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-eventmanager/stats">
+                            zend-eventmanager
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="33.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 33 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="15967620">            <strong>16.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="11969850">            <strong>12.0 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mvc-console/stats">
+                            zend-mvc-console
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 32 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="346650">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="262170">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-stratigility/stats">
+                            zend-stratigility
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="30.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 31 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="621000">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="474900">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-session/stats">
+                            zend-session
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="30.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2475120">            2.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1899720">            1.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-component-installer/stats">
+                            zend-component-installer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="30.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="532470">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="408840">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-db/stats">
+                            zend-db
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2530980">            2.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1948860">            1.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-escaper/stats">
+                            zend-escaper
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="29.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 30 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="9018420">            9.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="6961590">            7.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-captcha/stats">
+                            zend-captcha
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="28.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 29 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2020320">            2.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1569420">            1.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-inputfilter/stats">
+                            zend-inputfilter
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="27.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 28 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3163980">            3.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2476680">            2.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mvc-i18n/stats">
+                            zend-mvc-i18n
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="26.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 26 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="306720">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="243090">            <span class="text-muted">0.2 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-filter/stats">
+                            zend-filter
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="25.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 26 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3893160">            3.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3093000">            3.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-hydrator/stats">
+                            zend-hydrator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="23.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 23 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3512910">            3.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2850330">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-view/stats">
+                            zend-view
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="22.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 23 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2892660">            2.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2357460">            2.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-validator/stats">
+                            zend-validator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="22.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 23 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="6251790">            6.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="5099250">            5.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mvc-plugin-flashmessenger/stats">
+                            zend-mvc-plugin-flashmessenger
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="20.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 21 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="296790">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="245490">            <span class="text-muted">0.2 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-stdlib/stats">
+                            zend-stdlib
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="20.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 21 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="11529480">            <strong>11.5 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="9558750">            9.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-log/stats">
+                            zend-log
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="19.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 20 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2686440">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2246700">            2.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zendservice-apple-apns/stats">
+                            zendservice-apple-apns
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="19.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 20 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="583050">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="487920">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-form/stats">
+                            zend-form
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="19.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 19 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2719740">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2279010">            2.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-soap/stats">
+                            zend-soap
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="18.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 19 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2564010">            2.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2163030">            2.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-loader/stats">
+                            zend-loader
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="18.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 18 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4999410">            5.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="4220940">            4.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-uri/stats">
+                            zend-uri
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="18">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 18 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4458540">            4.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3777480">            3.8 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-console/stats">
+                            zend-console
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="17.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 17 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2577690">            2.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2198280">            2.2 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-modulemanager/stats">
+                            zend-modulemanager
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="16.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 17 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2662080">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2276490">            2.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-json/stats">
+                            zend-json
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="16.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 16 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3983940">            4.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3429480">            3.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-text/stats">
+                            zend-text
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="16.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 16 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2379240">            2.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2048610">            2.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-http/stats">
+                            zend-http
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="15.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 15 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4132620">            4.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="3580290">            3.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-server/stats">
+                            zend-server
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="15.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 15 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2733060">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2370990">            2.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-config/stats">
+                            zend-config
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="15">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 15 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3357270">            3.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2918970">            2.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-mvc/stats">
+                            zend-mvc
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="14.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 14 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2692530">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2353890">            2.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-di/stats">
+                            zend-di
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="13.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 14 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2182740">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1916250">            1.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-permissions-acl/stats">
+                            zend-permissions-acl
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 13 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="877110">            <span class="text-muted">0.9 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="779340">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-authentication/stats">
+                            zend-authentication
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1063140">            1.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="947070">            <span class="text-muted">0.9 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-i18n/stats">
+                            zend-i18n
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="11.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3026100">            3.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2712960">            2.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-paginator/stats">
+                            zend-paginator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="11.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 11 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1024620">            1.0 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="922230">            <span class="text-muted">0.9 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-servicemanager/stats">
+                            zend-servicemanager
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="10.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 10 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="4731420">            4.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="4289250">            4.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-serializer/stats">
+                            zend-serializer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="9.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 9 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2735130">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2500530">            2.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zendservice-google-gcm/stats">
+                            zendservice-google-gcm
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="9.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 9 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="523200">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="479040">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-dom/stats">
+                            zend-dom
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="6.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 6 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="710370">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="668220">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-math/stats">
+                            zend-math
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="5.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 6 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3147300">            3.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2976030">            3.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-cache/stats">
+                            zend-cache
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="4.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 5 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1559730">            1.6 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1489020">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-crypt/stats">
+                            zend-crypt
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2711280">            2.7 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2612370">            2.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-permissions-rbac/stats">
+                            zend-permissions-rbac
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="659160">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="636000">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-test/stats">
+                            zend-test
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="637530">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="616260">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-navigation/stats">
+                            zend-navigation
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 3 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="615360">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="599400">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-developer-tools/stats">
+                            zend-developer-tools
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 3 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="407340">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="396930">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-debug/stats">
+                            zend-debug
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="664980">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="649830">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-memory/stats">
+                            zend-memory
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="1.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="680730">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="669750">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-version/stats">
+                            zend-version
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="1.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="491790">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="484440">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-tag/stats">
+                            zend-tag
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="0.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 0 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="481050">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="480480">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-i18n-resources/stats">
+                            zend-i18n-resources
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-2.4">    <span class="text-nowrap">
+                    <span class="text-danger">- 2 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="547470">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="561180">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zendxml/stats">
+                            zendxml
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-2.6">    <span class="text-nowrap">
+                    <span class="text-danger">- 3 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1092450">            1.1 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1121670">            1.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zendframework1/stats">
+                            zendframework1
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-3">    <span class="text-nowrap">
+                    <span class="text-danger">- 3 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="851400">            <span class="text-muted">0.9 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="877920">            <span class="text-muted">0.9 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-progressbar/stats">
+                            zend-progressbar
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-5.2">    <span class="text-nowrap">
+                    <span class="text-danger">- 5 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="468420">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="494220">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-xmlrpc/stats">
+                            zend-xmlrpc
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-6.1">    <span class="text-nowrap">
+                    <span class="text-danger">- 6 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="631260">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="672030">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zend-file/stats">
+                            zend-file
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-7">    <span class="text-nowrap">
+                    <span class="text-danger">- 7 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="521430">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="560640">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/zendframework/zendframework/stats">
+                            zendframework
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-9.1">    <span class="text-nowrap">
+                    <span class="text-danger">- 9 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="724680">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="797010">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="cakephp">CakePHP</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="cakephp">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/utility/stats">
+                            utility
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="240.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 240 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1181100">            1.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="347100">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/chronos/stats">
+                            chronos
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="60.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 61 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="3776220">            3.8 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2348880">            2.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/migrations/stats">
+                            migrations
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="834900">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="804630">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/plugin-installer/stats">
+                            plugin-installer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="848850">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="832080">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/bake/stats">
+                            bake
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="1.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="762090">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="749670">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/debug_kit/stats">
+                            debug_kit
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="1.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 1 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="988740">            <span class="text-muted">1.0 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="977760">            <span class="text-muted">1.0 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/cakephp/stats">
+                            cakephp
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-7.1">    <span class="text-nowrap">
+                    <span class="text-danger">- 7 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1291410">            1.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1390770">            1.4 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/cakephp/cakephp-codesniffer/stats">
+                            cakephp-codesniffer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-11.7">    <span class="text-nowrap">
+                    <span class="text-danger">- 12 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="685230">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="776010">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="doctrine">Doctrine</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="doctrine">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/migrations/stats">
+                            migrations
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="35.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 36 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="10280160">            <strong>10.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="7580340">            7.6 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/lexer/stats">
+                            lexer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="34.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 34 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="47761620">            <strong>47.8 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="35629020">            <strong>35.6 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/dbal/stats">
+                            dbal
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="25.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 26 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="29305920">            <strong>29.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="23283090">            <strong>23.3 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/cache/stats">
+                            cache
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="24.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 24 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="34263780">            <strong>34.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="27573060">            <strong>27.6 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/instantiator/stats">
+                            instantiator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="23.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 24 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="51991470">            <strong>52.0 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="42012390">            <strong>42.0 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/data-fixtures/stats">
+                            data-fixtures
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="23.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 24 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="7500870">            7.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="6072540">            6.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/inflector/stats">
+                            inflector
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="22.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 22 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="47347890">            <strong>47.3 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="38733300">            <strong>38.7 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/orm/stats">
+                            orm
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="16.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 16 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="15489210">            <strong>15.5 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="13325190">            <strong>13.3 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/annotations/stats">
+                            annotations
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="31566000">            <strong>31.6 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="28136910">            <strong>28.1 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/mongodb-odm/stats">
+                            mongodb-odm
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="8.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 9 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1200450">            1.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1105740">            1.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/collections/stats">
+                            collections
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="6.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 7 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="26710920">            <strong>26.7 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="25079280">            <strong>25.1 M</strong>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/mongodb/stats">
+                            mongodb
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 2 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1166640">            1.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1139910">            1.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/doctrine/common/stats">
+                            common
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-0.4">    <span class="text-nowrap">
+                    <span class="text-danger">- 0 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="24453480">            <strong>24.5 M</strong>
+    </td>
+                    <td class="text-right text-nowrap" data-order="24562110">            <strong>24.6 M</strong>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="nette">Nette</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="nette">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/utils/stats">
+                            utils
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="60.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 61 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1354980">            1.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="841890">            <span class="text-muted">0.8 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/php-generator/stats">
+                            php-generator
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="58">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 58 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="777900">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="492480">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/finder/stats">
+                            finder
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="20.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 20 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="704640">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="586560">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/forms/stats">
+                            forms
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="11.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="474870">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="424680">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/security/stats">
+                            security
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="8.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 9 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="458700">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="422040">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/component-model/stats">
+                            component-model
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="8.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 8 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="542340">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="500580">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/http/stats">
+                            http
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="6.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 7 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="573060">            <span class="text-muted">0.6 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="536280">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/application/stats">
+                            application
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 6 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="520410">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="491100">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/tester/stats">
+                            tester
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.7">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="276000">            <span class="text-muted">0.3 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="266220">            <span class="text-muted">0.3 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/mail/stats">
+                            mail
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 3 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="546000">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="530100">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/database/stats">
+                            database
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="0.8">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 1 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="358050">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="355200">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/robot-loader/stats">
+                            robot-loader
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="0.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 1 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="426330">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="424350">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/caching/stats">
+                            caching
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-3.9">    <span class="text-nowrap">
+                    <span class="text-danger">- 4 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="870780">            <span class="text-muted">0.9 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="906030">            <span class="text-muted">0.9 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/nette/reflection/stats">
+                            reflection
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-4.8">    <span class="text-nowrap">
+                    <span class="text-danger">- 5 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="539250">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="566520">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                    </table>
+            <hr>
+
+        <div class="text-center mb-5">
+            <h2 id="yii">Yii</h2>
+
+            <p>
+                <a href="#main_table">Jump up ↑</a>
+            </p>
+        </div>
+
+        <table class="table table-bordered table-responsive table-striped mt-4 mt-4 sortable_table" id="yii">
+            <thead class="thead-inverse">
+                <tr>
+                    <th class="text-center w-25 align-middle">Package</th>
+                    <th class="text-center w-25 align-middle">Year Trend</th>
+                    <th class="text-center w-25 align-middle">Last 12 Months</th>
+                    <th class="text-center w-25 align-middle">Previous 12 Months</th>
+                </tr>
+            </thead>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-queue/stats">
+                            yii2-queue
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="87.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 87 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="709620">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="378930">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-httpclient/stats">
+                            yii2-httpclient
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="32.2">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 32 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="823920">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="623040">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-redis/stats">
+                            yii2-redis
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="19.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 19 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="791700">            <span class="text-muted">0.8 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="663000">            <span class="text-muted">0.7 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2/stats">
+                            yii2
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="14.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 15 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2367630">            2.4 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2059920">            2.1 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-debug/stats">
+                            yii2-debug
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="13.9">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 14 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1922760">            1.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1687500">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii/stats">
+                            yii
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 13 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="467190">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="415320">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-swiftmailer/stats">
+                            yii2-swiftmailer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1920870">            1.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1708830">            1.7 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-composer/stats">
+                            yii2-composer
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="12.1">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 12 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="2245620">            2.2 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="2003550">            2.0 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-jui/stats">
+                            yii2-jui
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="11.3">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 11 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="696600">            <span class="text-muted">0.7 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="625620">            <span class="text-muted">0.6 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-imagine/stats">
+                            yii2-imagine
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="7.4">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 7 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="395580">            <span class="text-muted">0.4 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="368190">            <span class="text-muted">0.4 M</span>
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-bootstrap/stats">
+                            yii2-bootstrap
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="3.6">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 4 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1942770">            1.9 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1875480">            1.9 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-gii/stats">
+                            yii2-gii
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="2.5">    <span class="text-nowrap">
+                    <strong>
+                <span class="text-success">+ 3 %</span>
+            </strong>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1505700">            1.5 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1468500">            1.5 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-faker/stats">
+                            yii2-faker
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-0.9">    <span class="text-nowrap">
+                    <span class="text-danger">- 1 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="1317660">            1.3 M
+    </td>
+                    <td class="text-right text-nowrap" data-order="1329480">            1.3 M
+    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        <a href="https://packagist.org/packages/yiisoft/yii2-authclient/stats">
+                            yii2-authclient
+                        </a>
+                    </td>
+                    <td class="text-right text-nowrap" data-order="-3.8">    <span class="text-nowrap">
+                    <span class="text-danger">- 4 %</span>
+            </span>
+</td>
+                    <td class="text-right text-nowrap" data-order="465480">            <span class="text-muted">0.5 M</span>
+    </td>
+                    <td class="text-right text-nowrap" data-order="483930">            <span class="text-muted">0.5 M</span>
+    </td>
+                </tr>
+                    </table>
+    
+    <h2 class="mb-4" id="methodology">Methodology Notes</h2>
+
+    <p>Few outlier packages were removed to make numbers more relevant. To be specific:</p>
+
+    <ul>
+        <li><code>symfony/*</code> downloads are cleared from <code>laravel/*</code> downloads = when you download Laravel package, it will not count into Symfony download; see <a href="https://github.com/TomasVotruba/tomasvotruba.cz/blob/master/src/Packagist/Purifier/InterveningPackagesPurifier.php#L17">full list of cleared packages</a></li>
+
+        <li>
+            packages with <strong>less than 1000 downloads daily</strong> - not relevant compared in this scale
+        </li>
+        <li>packages with <strong>history shorter than 24 months</strong> - we need exactly 24 months to compute stable trend</li>
+        <li>packages with <strong>year trend bigger than 300 %</strong> - they're caused by new interdependency from another framework's package that is already popular</li>
+    </ul>
+
+    <br>
+
+    <p><strong>Thanks</strong> to <a href="https://github.com/jkuchar">Jan Kuchar</a> and <a href="https://github.com/garas">Edgaras Janušauskas</a> for extreme corrections. Also this
+            overview would not be possible without <a href="https://packagist.org/apidoc">Packagist API</a> built by Jordi Boggiano and Nils Adermann.
+    </p>
+
+    <h2 id="comments">What Do You Think?</h2>
+
+    <div id="disqus_thread"></div>
+
+<script type="text/javascript">
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//' + 'itsworthsharing' + '.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet"/>        </div>
+
+        <script src="/assets/js/jquery-3.3.1.slim.min.js?=1928102901"></script>
+<script src="/assets/gifplayer/jquery.gifplayer.js?=396331278"></script>
+<script src="/assets/js/cluster-checklist.js?=1163314809"></script>
+<script src="/assets/js/cluster-expanable.js?=322965318"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+    ga=function(){ ga.q.push(arguments) };
+    ga.q=[];
+    ga.l=+new Date;
+    ga('create', 'UA-46082345-1', 'auto');
+    ga('send','pageview');
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+<script src="/assets/prism/prism.js"></script>
+
+<script>
+    $('.gifplayer').gifplayer();
+
+    // sortable table
+    $('.sortable_table').DataTable({
+        // see https://datatables.net/examples/basic_init/filter_only.html
+        "searching": false,
+        "paging": false,
+        "info": false,
+        "order": [[1, "desc"]],
+        // see https://datatables.net/examples/advanced_init/sort_direction_control.html
+        "aoColumns": [
+            null,
+            { "orderSequence": [ "desc", "asc" ] },
+            { "orderSequence": [ "desc", "asc" ] },
+            { "orderSequence": [ "desc", "asc" ] }
+        ]
+    });
+</script>
+
+<div class="text-center mt-5" id="footer">
+    <div class="row">
+        <div class="col-12">
+            Join 17 579 PHP developers every month: <a href="/rss.xml">RSS</a>&nbsp;or&nbsp;<a href="https://twitter.com/votrubaT">@votrubaT</a>
+        </div>
+    </div>
+
+    <p>
+        Build by <a href="/thank-you/">74 people</a>
+
+        <span class="pl-2 pr-2">•</span>
+
+        <a href="https://patreon.com/rectorphp">Support me</a>
+
+        <span class="hidden-sm-down">
+            <span class="pl-2 pr-2">•</span>
+            Hosted with <a href="https://www.statie.org/">Statie</a> on <a href="https://github.com/tomasvotruba/tomasvotruba.cz">GitHub</a>
+        </span>
+    </p>
+</div>
+    </body>
+</html>
